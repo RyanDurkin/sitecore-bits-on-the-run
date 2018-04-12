@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.BitsOnTheRun", "Sitecore.BitsOnTheRun\Sitecore.BitsOnTheRun.csproj", "{0163E5BB-1598-4234-83EC-0D83A2B10E02}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.BitsOnTheRun.Web", "Sitecore.BitsOnTheRun.Web\Sitecore.BitsOnTheRun.Web.csproj", "{F5E1DEAF-E0C7-4850-924D-C7E8F4B431FF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{37A80B8E-B985-4B31-9905-F1E63FD47DBA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BotR.API", "BotR.API\BotR.API.csproj", "{F4CF022F-F94B-4B89-933C-8592ACB650FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0163E5BB-1598-4234-83EC-0D83A2B10E02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0163E5BB-1598-4234-83EC-0D83A2B10E02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0163E5BB-1598-4234-83EC-0D83A2B10E02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0163E5BB-1598-4234-83EC-0D83A2B10E02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5E1DEAF-E0C7-4850-924D-C7E8F4B431FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5E1DEAF-E0C7-4850-924D-C7E8F4B431FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5E1DEAF-E0C7-4850-924D-C7E8F4B431FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5E1DEAF-E0C7-4850-924D-C7E8F4B431FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4CF022F-F94B-4B89-933C-8592ACB650FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4CF022F-F94B-4B89-933C-8592ACB650FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4CF022F-F94B-4B89-933C-8592ACB650FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4CF022F-F94B-4B89-933C-8592ACB650FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FED65816-9552-434A-9F63-5AC6AAF792CA}
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+EndGlobal

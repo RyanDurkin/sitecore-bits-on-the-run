@@ -1,0 +1,62 @@
+﻿<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
+  <sitecore>
+    <dataProviders>
+      <!-- Note: Order of parameters within data provider below must be maintained. -->
+      <botr type="Sitecore.BitsOnTheRun.BotrDataProvider, Sitecore.BitsOnTheRun" patch:before="methodGroups">
+        <!--
+          The parent item for your BotR videos. Should be in the Media Library.
+        -->
+        <param desc="parentItem">{FA872777-6817-4E0D-953E-71C2879F6BD4}</param>
+
+        <!--
+          To obtain a BotR API Key:
+          1) If needed, sign up for a BotR trial at http://www.longtailvideo.com/bits-on-the-run/sign-up/
+          2) Sign in to your BotR account
+          3) Find your API Key and API Secret under the Account tab
+        -->
+        <param desc="botrApiKey"></param>
+        <param desc="botrApiSecret"></param>
+        
+        <!--
+          Defines caching behavior for BotR data. Editing video data in the Content Editor will automatically flush the
+          data provider's cache, as will the BotR Data Refresh button.
+        -->
+        <param desc="cacheMaxSize">1MB</param>
+        <param desc="cacheExpirationMinutes">15</param>
+        
+        <!--
+          These parameters are used to generate the Link field for the video, if it is defined within the Content Editor.
+        -->
+        <param desc="videoLinkHost">www.mysite.com</param>
+        <param desc="videoLinkSite">website</param>
+      </botr>
+    </dataProviders>
+    <databases>
+      <database id="master">
+        <dataProviders>
+          <!-- Add to the chain after the main data provider -->
+          <dataProvider id="botrAfterMain" ref="dataProviders/botr" patch:after="dataProvider[@ref='dataProviders/main']">
+            <disable>*</disable>
+            <enable>BlobStreamExists</enable>
+            <enable>GetBlobStream</enable>
+            <enable>GetChildIDs</enable>
+            <enable>GetParentID</enable>
+            <enable>GetItemDefinition</enable>
+            <enable>GetItemVersions</enable>
+            <enable>GetItemFields</enable>
+            <enable>SaveItem</enable>
+            <!--
+              The connector can allow deletion of videos in BotR, but note this can have significant risk:
+              * Deleting the parent BotR item will delete all children, thus deleting all your BotR videos!
+              * Installing the package with the 'Overwrite' option on the BotR option will delete all children, doing the same.
+              <enable>DeleteItem</enable>
+            -->
+          </dataProvider>
+        </dataProviders>
+      </database>
+    </databases>
+    <commands>
+      <command name="botr:refresh" type="Sitecore.BitsOnTheRun.DataRefreshCommand, Sitecore.BitsOnTheRun"/>
+    </commands>
+  </sitecore>
+</configuration>
